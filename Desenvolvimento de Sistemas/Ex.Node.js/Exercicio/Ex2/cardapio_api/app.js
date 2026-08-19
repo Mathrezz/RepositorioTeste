@@ -7,6 +7,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(express.static('public'));
 
 function criarCliente() {
     return new Client({
@@ -14,7 +15,7 @@ function criarCliente() {
         port: 5432,
         user: 'postgres',
         password: 'root',
-        database: 'cardapio_db'
+        database: 'cardapio_api'
     });
 }
 
